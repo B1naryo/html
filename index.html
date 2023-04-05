@@ -11,30 +11,33 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-oxsLsTUjJAFH9aT9aSh1y/xMnV7/YbPxT2Pm7E4eS2P2SqcEceumI1+Xszn1BhC" crossorigin="anonymous"></script>
  <script>
 function enviarMensagem(event) {
-  event.preventDefault();
-  const form = event.target;
-  const nome = form.nome.value;
-  const email = form.email.value;
-  const mensagem = form.mensagem.value;
-  const url = form.action;
+    event.preventDefault(); // previne o comportamento padrão de enviar o formulário
 
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify({ nome, email, mensagem }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }).then(res => {
-    if (res.ok) {
-      window.location.href = 'sucesso.html';
-    } else {
-      window.location.href = 'erro.html';
-    }
-  }).catch(err => {
-    console.error(err);
-    window.location.href = 'erro.html';
-  });
+    // Pega os valores dos campos do formulário
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email").value;
+    var mensagem = document.getElementById("mensagem").value;
+
+    // Cria uma requisição HTTP POST para enviar os dados para o arquivo PHP
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "enviar.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // Define a função a ser executada quando a requisição for concluída
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            // Se a requisição foi bem sucedida, redireciona para a página de sucesso
+            window.location.href = "sucesso.html";
+        } else if (this.readyState === XMLHttpRequest.DONE) {
+            // Se a requisição falhou, redireciona para a página de erro
+            window.location.href = "erro.html";
+        }
+    };
+
+    // Envia os dados do formulário como parâmetros na requisição POST
+    xhr.send("nome=" + nome + "&email=" + email + "&mensagem=" + mensagem);
 }
+
 </script>
 
 </head>
