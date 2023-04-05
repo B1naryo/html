@@ -9,7 +9,34 @@
     <meta name="keywords" content="personal website, photos, life moments">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-oxsLsTUjJAFH9aT9aSh1y/xMnV7/YbPxT2Pm7E4eS2P2SqcEceumI1+Xszn1BhC" crossorigin="anonymous"></script>
- 
+ <script>
+function enviarMensagem(event) {
+  event.preventDefault();
+  const form = event.target;
+  const nome = form.nome.value;
+  const email = form.email.value;
+  const mensagem = form.mensagem.value;
+  const url = form.action;
+
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify({ nome, email, mensagem }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(res => {
+    if (res.ok) {
+      window.location.href = 'sucesso.html';
+    } else {
+      window.location.href = 'erro.html';
+    }
+  }).catch(err => {
+    console.error(err);
+    window.location.href = 'erro.html';
+  });
+}
+</script>
+
 </head>
 <body>
     <canvas id="pixie"></canvas>
@@ -187,7 +214,7 @@ Meu nome é Sandro Henrique Cerqueira, tenho 30 anos e sou graduado em Ciência 
         <div class="row">
             <div class="col-sm-6 col-md-6">
                 <h3>Envie sua mensagem</h3>
-                <form action="enviar.php" method="post">
+                 <form id="form-contato" action="enviar.php" method="post" onsubmit="enviarMensagem(event)">
                     <div class="form-group">
                         <label for="nome">Nome:</label>
                         <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" required>
