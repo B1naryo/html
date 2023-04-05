@@ -2,7 +2,7 @@
 // Verifica se os campos foram preenchidos corretamente
 if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['mensagem'])) {
     // Configurações do email
-    $para = 'seuemail@seusite.com.br'; // Endereço de email para onde a mensagem será enviada
+    $para = 'sandro520099@hotmail.com'; // Endereço de email para onde a mensagem será enviada
     $assunto = 'Nova mensagem do formulário de contato'; // Assunto da mensagem
     $nome = $_POST['nome'];
     $email = $_POST['email'];
