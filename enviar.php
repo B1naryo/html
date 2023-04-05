@@ -1,47 +1,21 @@
 <?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Configurações de email
-    $para = "sandro520099@hotmail.com";
-    $assunto = "Site Pessoal";
-
-    // Dados do formulário
-    $nome = test_input($_POST["nome"]);
-    $email = test_input($_POST["email"]);
-    $mensagem = test_input($_POST["mensagem"]);
-
-    // Validação dos dados
-    if (empty($nome) || empty($email) || empty($mensagem)) {
-        echo "Todos os campos são obrigatórios!";
-        exit;
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Endereço de email inválido!";
-        exit;
-    }
-
-    // Monta o corpo do email
-    $mensagem_email = "Nome: $nome\n\n";
-    $mensagem_email .= "Email: $email\n\n";
-    $mensagem_email .= "Mensagem:\n$mensagem\n";
-
+// Verifica se os campos foram preenchidos corretamente
+if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['mensagem'])) {
+    // Configurações do email
+    $para = 'seuemail@seusite.com.br'; // Endereço de email para onde a mensagem será enviada
+    $assunto = 'Nova mensagem do formulário de contato'; // Assunto da mensagem
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $mensagem = $_POST['mensagem'];
+    $mensagem_formatada = "Nome: $nome\nEmail: $email\nMensagem:\n$mensagem";
+    $headers = 'From: ' . $nome . '<' . $email . '>' . "\r\n" . 'Reply-To: ' . $email . "\r\n" . 'X-Mailer: PHP/' . phpversion();
     // Envia o email
-    if (mail($para, $assunto, $mensagem_email)) {
-        echo "Mensagem enviada com sucesso!";
-    } else {
-        echo "Ocorreu um erro ao enviar a mensagem!";
-    }
-
+    mail($para, $assunto, $mensagem_formatada, $headers);
+    // Redireciona para a página de sucesso
+    header('Location: sucesso.html');
+} else {
+    // Se algum campo não foi preenchido corretamente, redireciona para a página de erro
+    header('Location: erro.html');
 }
-
-// Função para validar os dados do formulário
-function test_input($dados) {
-    $dados = trim($dados);
-    $dados = stripslashes($dados);
-    $dados = htmlspecialchars($dados);
-    return $dados;
-}
-
 ?>
+
