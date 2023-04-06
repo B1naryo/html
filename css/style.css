@@ -70,6 +70,25 @@ img {  vertical-align: middle; }
 #main-wrapper {
      overflow: hidden;
 }
+
+#content2
+{
+  clear: both;
+  margin: 5px auto;
+  padding: 15px;
+  text-align: left;
+  width: 1024px auto;
+  height: 600px;
+  overflow: auto;
+  overflow-x: hidden;
+  border:1px #f0f0f0 solid;
+  color: #ffffff;
+  background: url(bg.jpg) center no-repeat;
+  -moz-box-shadow: inset 0 0 8px #aaa;
+  -webkit-box-shadow: inset 0 0 8px #aaa;
+  box-shadow: inset 0 0 8px #aaa;
+}
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
