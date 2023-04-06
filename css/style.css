@@ -269,9 +269,11 @@ border: 1px solid #ffffff;
 }
 
 td {
-  padding: 10px;
+  padding: 30px;
 }
-
+tr {
+  padding: 30px;
+}
 
 /* 4. Company Styles
 --------------------------------------------- */
