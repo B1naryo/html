@@ -47,7 +47,7 @@ body {
       overflow-x: hidden;
       border: 1px #f0f0f0 solid;
       color: #ffffff;
-      background: url(blue.jpg) center no-repeat;
+      background: none;
       background-size: cover; /* adicionado para preencher a imagem com a tabela */
       -moz-box-shadow: inset 0 0 8px #aaa;
       -webkit-box-shadow: inset 0 0 8px #aaa;
