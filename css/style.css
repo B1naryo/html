@@ -268,11 +268,9 @@ border: 1px solid #ffffff;
     cursor: default;
 }
 
-td {
-  padding: 30px;
-}
-tr {
-  padding: 10px;
+td, tr {
+  font-size: 16px;
+   padding: 10px;
 }
 
 /* 4. Company Styles
