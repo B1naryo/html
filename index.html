@@ -9,36 +9,7 @@
     <meta name="keywords" content="personal website, photos, life moments">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-oxsLsTUjJAFH9aT9aSh1y/xMnV7/YbPxT2Pm7E4eS2P2SqcEceumI1+Xszn1BhC" crossorigin="anonymous"></script>
- <script>
-function enviarMensagem(event) {
-    event.preventDefault(); // previne o comportamento padrão de enviar o formulário
-
-    // Pega os valores dos campos do formulário
-    var nome = document.getElementById("nome").value;
-    var email = document.getElementById("email").value;
-    var mensagem = document.getElementById("mensagem").value;
-
-    // Cria uma requisição HTTP POST para enviar os dados para o arquivo PHP
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "enviar.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    // Define a função a ser executada quando a requisição for concluída
-    xhr.onreadystatechange = function() {
-        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            // Se a requisição foi bem sucedida, redireciona para a página de sucesso
-            window.location.href = "sucesso.html";
-        } else if (this.readyState === XMLHttpRequest.DONE) {
-            // Se a requisição falhou, redireciona para a página de erro
-            window.location.href = "error.html";
-        }
-    };
-
-    // Envia os dados do formulário como parâmetros na requisição POST
-    xhr.send("nome=" + nome + "&email=" + email + "&mensagem=" + mensagem);
-}
-
-</script>
+ 
 
 </head>
 <body>
@@ -203,32 +174,7 @@ Meu nome é Sandro Henrique Cerqueira, tenho 30 anos e sou graduado em Ciência 
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h2>Estou aguardando seu contato!</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Localização</h3>
-                <div id="map-canvas"></div>
-            </div>
-            <div class="col-md-6">
-                <h3>Envie sua mensagem</h3>
-                <form id="form-contato" action="enviar.php" method="post" onsubmit="enviarMensagem(event)">
-                    <div class="form-group">
-                        <label for="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea name="mensagem" id="mensagem" class="form-control" rows="9" placeholder="Mensagem" required></textarea>
-                    </div>
-                    <div class="g-recaptcha" data-sitekey="SUA_CHAVE_DO_RECAPTCHA"></div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdWffiOf1sDi5lgASfzEECEs8EnTuHvH3hfmx3yeGlF0TLzQg/viewform?embedded=true" width="640" height="708" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>
             </div>
         </div>
     </div>
