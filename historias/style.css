@@ -8,7 +8,7 @@ body {
       color: #ffffff;
     }
     #banner {
-      background: url(logo.jpg) center center no-repeat;
+      background: url(bg.png) center center no-repeat;
       height: 75px;
     }
     #header {
