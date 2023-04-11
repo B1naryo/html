@@ -15,6 +15,11 @@ body {
     font-style: normal; 
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
+	background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 350px;
+    background-color: #00040d;
 
 }
 
