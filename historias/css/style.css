@@ -157,8 +157,7 @@ img {  vertical-align: middle; }
 }
 .nav .fa { font-size: 2em; }
 .navbar-default .navbar-nav > li > a {
-    color: white;
-    background-color: rgba(0,0,0,0.5);
+    
     width: 120px;
     height: 120px;
 border: 1px solid #ffffff;
