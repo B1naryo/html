@@ -160,8 +160,8 @@ img {  vertical-align: middle; }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li.active > a {
-  background-color: #fff;
-  color: black;
+  background-color: transparent;
+  color: transparent;
 }
 
 
