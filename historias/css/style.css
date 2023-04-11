@@ -132,33 +132,38 @@ img {  vertical-align: middle; }
   color: #000000;
 }
 
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-}
 .navbar {
-    border-radius: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.6em;
+  background: none;
+  border: none;
+  margin-top: 50px;
 }
 
-.nav>li { margin-right: 10px; }
-.nav>li:last-child { margin-right: 0; }
-.nav i {
-    display: block;
-    padding: 15px 0 15px 0;
+.navbar-default .navbar-nav > li {
+  margin-right: 30px;
 }
-.nav .fa { font-size: 2em; }
+
 .navbar-default .navbar-nav > li > a {
-    
-    width: 120px;
-    height: 120px;
-
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
 }
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li.active > a {
+  background-color: #fff;
+  color: black;
+}
+
 
 
 
