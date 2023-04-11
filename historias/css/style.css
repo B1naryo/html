@@ -143,11 +143,11 @@ img {  vertical-align: middle; }
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: white;
+  color: transparent;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border: 1px solid #fff;
+  border: 1px solid transparent;
   border-radius: 50%;
   width: 70px;
   height: 70px;
