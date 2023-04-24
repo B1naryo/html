@@ -15,9 +15,6 @@ body {
     font-style: normal; 
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
-	background-color: #000000;
-
-
 }
 
 h1, h2, h3, h4, h5, h6, span, p, li { font-family: 'Open Sans', sans-serif; }
@@ -44,19 +41,7 @@ img {  vertical-align: middle; }
 .green {
 	color: #5F5;
 }
-.banner {
-  width: 100%;
-  height: 200px;
-  background-color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.banner img {
-  max-width: 100%;
-  max-height: 100%;
-}
 
 .slider-caption {
     color: black;
@@ -68,7 +53,7 @@ img {  vertical-align: middle; }
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: black; /* change if the mask should have another color then white */
+    background-color: #fff; /* change if the mask should have another color then white */
     z-index: 99; /* makes sure it stays on top */
 }
 #status {
@@ -131,41 +116,45 @@ img {  vertical-align: middle; }
   height: 0px;
   color: #000000;
 }
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+}
 
+.navbar .navbar-collapse {
+  text-align: center;
+}
 .navbar {
-  background: none;
-  border: none;
-  margin-top: 50px;
+    border-radius: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6em;
 }
-
-.navbar-default .navbar-nav > li {
-  margin-right: 30px;
+.navbar-default {
+    background: none;
+    border: none;
 }
-
+.nav>li { margin-right: 10px; }
+.nav>li:last-child { margin-right: 0; }
+.nav i {
+    display: block;
+    padding: 15px 0 15px 0;
+}
+.nav .fa { font-size: 2em; }
 .navbar-default .navbar-nav > li > a {
-  color: transparent;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    width: 120px;
+    height: 120px;
+border: 1px solid #ffffff;
 }
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li.active > a {
-  background-color: transparent;
-  color: transparent;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: yellow;
+    background-color: rgba(0,0,0,0.5);
 }
-
-
-
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: yellow;
+    background-color: rgba(0,0,0,0.5);
+}
 
 
 .site-name {
