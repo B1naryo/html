@@ -36,8 +36,10 @@
 </head>
 <body>
     <div id="terminal"></div>
-   
-<script>
+   <script>
+ 
+    if (true) {
+       
         
       
         document.body.classList.add("locked"); 
@@ -62,13 +64,18 @@
                 setTimeout(typeEffect, speed);
             } else {
                 setTimeout(function() {
-                    window.location.href = "home.html";
+                    if (true) {
+        window.location.href = "home.html";
+    }
                 }, 1000); // Redireciona para index.html após 1 segundo
             }
         }
 
         typeEffect();
-    </script>
+
+</script>
+  
+
     <script src="loader.js"></script>
 </body>
 </html>
