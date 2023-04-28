@@ -60,8 +60,12 @@
                 setTimeout(typeEffect, speed);
             } else {
                 setTimeout(function() {
-                    
-        window.location.href = "home.html";
+               sessionStorage.setItem("true");
+
+			// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
+			if (sessionStorage.getItem("true") == "true") {
+			    window.location.href = "home.html";
+			}
  
                 }, 1000); // Redireciona para index.html após 1 segundo
             }
