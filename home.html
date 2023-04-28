@@ -15,14 +15,14 @@
 
 <body>
    <script>
-		// Inicia a sessão
-		sessionStorage.setItem("true");
+	// Inicia a sessão
+	sessionStorage.setItem("true");
 
-		// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
-		if (!sessionStorage.getItem("true") !== "true") {
-		    window.location.href = "index.html";
-		}
-	</script>
+	// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
+	if (sessionStorage.getItem("true") !== "true") {
+		window.location.href = "index.html";
+	}
+</script>
     <canvas id="pixie"></canvas>
     <div id="main-wrapper">
         <div class="container">
