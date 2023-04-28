@@ -19,7 +19,7 @@
 		sessionStorage.setItem("true");
 
 		// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
-		if (!sessionStorage.getItem("logado") || sessionStorage.getItem("logado") !== "true") {
+		if (!sessionStorage.getItem("true") !== "true") {
 		    window.location.href = "index.html";
 		}
 	</script>
