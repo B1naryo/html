@@ -54,22 +54,24 @@
         var i = 0;
 
         function typeEffect() {
-            if (i < text.length) {
-                terminal.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeEffect, speed);
-            } else {
-                setTimeout(function() {
-               sessionStorage.setItem("true");
+  var success = false;
+  if (i < text.length) {
+    terminal.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, speed);
+  } else {
+    success = true;
+    setTimeout(function() {
+      if (success) {
+        sessionStorage.setItem("status", "true");
+        window.location.href = "home.html";
+      } else {
+        sessionStorage.setItem("status", "false");
+      }
+    }, 1000);
+  }
+}
 
-			// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
-			if (sessionStorage.getItem("true") == "true") {
-			    window.location.href = "home.html";
-			}
- 
-                }, 1000); // Redireciona para index.html após 1 segundo
-            }
-        }
 
         typeEffect();
 
