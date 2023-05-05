@@ -1,5 +1,5 @@
 # Impede o acesso a diretórios específicos
-Options All -Indexes
+Options -Indexes
 
 # Diretórios que devem ser protegidos
 RewriteEngine On
